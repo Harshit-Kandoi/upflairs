@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 10px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Insurance Premium Charges Prediction</h1>
+    </header>
+    <div class="content">
+        <div class="card">
+            <h2>Get Insurance Premium Charges Prediction</h2>
+            <hr>
+            <form action="{{url_for('data')}}" method="post">
+                <div class="form-group">
+                    <label for="age">Enter your age</label>
+                    <input type="number" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="region">Select region:</label>
+                    <select name="region" required>
+                        <option value="southeast">Southeast</option>
+                        <option value="southwest">Southwest</option>
+                        <option value="northeast">Northeast</option>
+                        <option value="northwest">Northwest</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="children">Select number of children:</label>
+                    <select name="children" required>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="health">Health:</label>
+                    <select name="health" required>
+                        <option value="1">Underweight</option>
+                        <option value="2">Healthy weight</option>
+                        <option value="3">Overweight</option>
+                        <option value="4">Obese</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select name="gender" required>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="smoker">Smoker</label>
+                    <select name="smoker" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bmi">BMI</label>
+                    <input type="number" name="bmi" step="0.1" required>
+                </div>
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
